@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.csahula</groupId>
+    <version>1.0</version>
+    <artifactId>java-prototyping</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Java basic application</name>
+    <description>Testing abilities of Java languages. The purpose of project is just for my study, testing and fun.</description>
+
+    <properties>
+        <version.junit>4.12</version.junit>
+        <version.hamcrest-all>1.3</version.hamcrest-all>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${version.hamcrest-all}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
