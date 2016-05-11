@@ -10,8 +10,15 @@
     <description>Testing abilities of Java languages. The purpose of project is just for my study, testing and fun.</description>
 
     <properties>
+
+        <!-- Java configuration -->
+        <version.java>1.8</version.java>
+        <version.java>1.8</version.java>
+
+        <!-- 3th libs -->
         <version.junit>4.12</version.junit>
         <version.hamcrest-all>1.3</version.hamcrest-all>
+
     </properties>
 
     <dependencies>
@@ -35,4 +42,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${version.java}</source>
+                        <target>${version.java}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
