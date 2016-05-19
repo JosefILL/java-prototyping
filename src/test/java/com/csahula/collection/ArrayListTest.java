@@ -87,22 +87,26 @@ public class ArrayListTest {
 
         // Testing an array with a default capacity.
         long defaultCapacityBegin = System.nanoTime();
-        final ArrayList withDefaultCapacity = new ArrayList();
+        ArrayList<String> withDefaultCapacity = new ArrayList();
         for (int i = 0; i < loops; i++) {
-            withDefaultCapacity.add(i);
+            withDefaultCapacity.add(String.valueOf(i));
         }
         resultDefaultCapacity = System.nanoTime() - defaultCapacityBegin;
 
         // Testing an array with a preset capacity.
         long presetCapacityBegin = System.nanoTime();
-        final ArrayList withPresetCapacity = new ArrayList();
+        ArrayList<String> withPresetCapacity = new ArrayList(loops);
         for (int i = 0; i < loops; i++) {
-            withPresetCapacity.add(i);
+            withPresetCapacity.add(String.valueOf(i));
         }
+
         resultPresetCapacity = System.nanoTime() - presetCapacityBegin;
 
         LOGGER.info("Time spent for a ArrayList with default capacity is: {} and a time apent for a ArrayList with preset capacity is: {}.", resultDefaultCapacity, resultPresetCapacity);
+
+        /*
+        I found out that a collection with preset capacity is sometime is faster however
+        sometime is slower. Although It rule which is good to use.
+        */
     }
-
-
 }
