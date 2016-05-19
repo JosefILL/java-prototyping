@@ -1,25 +1,26 @@
 package com.csahula.collection;
 
-import org.hamcrest.core.IsInstanceOf;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.instanceOf;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 
 /**
  * @autor Cyva (cyril.sahula@gmail.com)
  *
- * Test cases testing possibilities of Lists
- * It is my preparation for Java certification and codes do not have purpose
+ * Test cases testing usage of {@link java.util.ArrayList}
+ * It is my preparation for Java certification and codes do not have purpose.
  */
-public class CollectionListTest {
+public class ArrayListTest {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ArrayListTest.class);
 
     @Test
-    public void testArrayList() {
+    public void basicTest() {
 
         Integer[] numbersPrimitiveList = {1, 5, 6, 3};
 
@@ -34,8 +35,11 @@ public class CollectionListTest {
         assertThat("ArrayList is not sorted collection", numbers.get(5), not(10));
     }
 
+    /**
+     * Testing different ways how to iterate an ArrayList.
+     */
     @Test
-    public void testLooping() {
+    public void iterationTest() {
 
         List<Integer> numbers = new ArrayList(Arrays.asList(new int[]{1, 5, 6, 3}));
 
@@ -70,52 +74,35 @@ public class CollectionListTest {
         }
     }
 
+    /**
+     * Testing a performance between an ArrayList with default capacity (10) and a ArrayList with preset capacity.
+     */
     @Test
-    public void testLinkedList() {
+    public void capacityVsDefaultCapacityTest() {
 
-        Integer[] numbersPrimitiveList = {1, 5, 6, 3};
+        int loops = 500000;
 
-        List<Integer> numbers = new LinkedList<>(Arrays.asList(numbersPrimitiveList));
-        numbers.add(10);
-        numbers.add(4);
+        long resultDefaultCapacity;
+        long resultPresetCapacity;
 
-        assertThat("LinkedList is is Collection", numbers, instanceOf(Collection.class));
-        assertThat("Is possible to iterate through an linked list", numbers, instanceOf(Iterable.class));
-        assertThat("LinkedList is ordered collection", numbers.get(0), is(1));
-        assertThat("LinkedList is ordered collection", numbers.get(3), is(3));
-        assertThat("LinkedList is not sorted collection", numbers.get(5), not(10));
-    }
-
-    @Test
-    public void testVector() {
-
-        Integer[] numbersPrimitiveList = {1, 5, 6, 3};
-
-
-        Vector<Integer> numbers = new Vector<>(Arrays.asList(numbersPrimitiveList));
-        numbers.add(10);
-        numbers.add(4);
-
-        assertThat("Vector is is Collection", numbers, instanceOf(Collection.class));
-        assertThat("Is possible to iterate through an Vector", numbers, instanceOf(Iterable.class));
-        assertThat("Vector is ordered collection", numbers.get(0), is(1));
-        assertThat("Vector is ordered collection", numbers.get(3), is(3));
-        assertThat("Vector is not sorted collection", numbers.get(5), not(10));
-    }
-
-    @Test
-    public void testPerformance() {
-
-
-
-    }
-
-    private void generateRandomList() {
-
-        Random randomGenerator = new Random();
-        for (int i=0; i<40000; i++) {
+        // Testing an array with a default capacity.
+        long defaultCapacityBegin = System.nanoTime();
+        final ArrayList withDefaultCapacity = new ArrayList();
+        for (int i = 0; i < loops; i++) {
+            withDefaultCapacity.add(i);
         }
+        resultDefaultCapacity = System.nanoTime() - defaultCapacityBegin;
 
+        // Testing an array with a preset capacity.
+        long presetCapacityBegin = System.nanoTime();
+        final ArrayList withPresetCapacity = new ArrayList();
+        for (int i = 0; i < loops; i++) {
+            withPresetCapacity.add(i);
+        }
+        resultPresetCapacity = System.nanoTime() - presetCapacityBegin;
 
+        LOGGER.info("Time spent for a ArrayList with default capacity is: {} and a time apent for a ArrayList with preset capacity is: {}.", resultDefaultCapacity, resultPresetCapacity);
     }
+
+
 }
