@@ -1,42 +1,53 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
+Java Prototyping
+================
 
 Testing abilities of Java languages. The purpose of project is just my study, testing and fun. Project contains two
 modules. One for a unit testing and second one for benchmark testing.
 
-## Installation
+Installation
+============
 
-# Software requirements
+Software requirements
+-----
 
 * Java 1.8 and above
 * Maven 3 and above
 * Maven repository with demanded dependencies
 
-# Steps
+Steps
+-----
+TODO
 
-## Usage
+Usage
+=====
 
-# Benchmark
+Benchmark
+---------
 
-1. cd benchmark
-2. mvn clean install
-3. java -jar target/benchmark-1.0.jar
-4. Wait and I can see statistics
+```
+cd benchmark
+mvn clean install
+java -jar target/benchmark-1.0.jar
+```
+Wait and see statistics
 
-# Unit testing
+Unit testing
+------------
 
 To run tests use your IDE or through Maven use command:
+```
 mvn test
+```
 
-# Technologies
+Technologies
+------------
 
-## Java Micro Harness
+* Java Micro Harness
 http://openjdk.java.net/projects/code-tools/jmh/
 http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
 
-## jUnit
+* jUnit
 http://junit.org/
 
-## Maven
+* Maven
 https://maven.apache.org/
