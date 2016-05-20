@@ -1,1 +1,0 @@
-Testing abilities of Java languages. The purpose of project is just for my study, testing and fun.

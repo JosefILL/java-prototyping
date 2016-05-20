@@ -5,6 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -41,7 +43,7 @@ public class ArrayListTest {
     @Test
     public void iterationTest() {
 
-        List<Integer> numbers = new ArrayList(Arrays.asList(new int[]{1, 5, 6, 3}));
+        List<Integer> numbers = Stream.of(1, 5, 6, 3).collect(Collectors.toList());
 
         System.out.println("Iteration for classics loop:");
         for (int i=0; i<numbers.size(); i++) {
@@ -72,41 +74,5 @@ public class ArrayListTest {
             System.out.printf(String.format("Item with index %d has value %d.\n", index++, numbers.get(index)));
             index++;
         }
-    }
-
-    /**
-     * Testing a performance between an ArrayList with default capacity (10) and a ArrayList with preset capacity.
-     */
-    @Test
-    public void capacityVsDefaultCapacityTest() {
-
-        int loops = 500000;
-
-        long resultDefaultCapacity;
-        long resultPresetCapacity;
-
-        // Testing an array with a default capacity.
-        long defaultCapacityBegin = System.nanoTime();
-        ArrayList<String> withDefaultCapacity = new ArrayList();
-        for (int i = 0; i < loops; i++) {
-            withDefaultCapacity.add(String.valueOf(i));
-        }
-        resultDefaultCapacity = System.nanoTime() - defaultCapacityBegin;
-
-        // Testing an array with a preset capacity.
-        long presetCapacityBegin = System.nanoTime();
-        ArrayList<String> withPresetCapacity = new ArrayList(loops);
-        for (int i = 0; i < loops; i++) {
-            withPresetCapacity.add(String.valueOf(i));
-        }
-
-        resultPresetCapacity = System.nanoTime() - presetCapacityBegin;
-
-        LOGGER.info("Time spent for a ArrayList with default capacity is: {} and a time apent for a ArrayList with preset capacity is: {}.", resultDefaultCapacity, resultPresetCapacity);
-
-        /*
-        I found out that a collection with preset capacity is sometime is faster however
-        sometime is slower. Although It rule which is good to use.
-        */
     }
 }
