@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
 /**
  * @autor Cyva (cyril.sahula@gmail.com)
  *
- * Test of stopping a thread for a particular time period.
+ * Test of stopping a threadClass for a particular time period.
  * Codes do not have purpose. It is just for my study.
  */
 public class SleepThreadTest {
@@ -31,7 +31,7 @@ public class SleepThreadTest {
 
             String threadName = Thread.currentThread().getName();
 
-            LOGGER.info("Running thread: {}", threadName);
+            LOGGER.info("Running threadClass: {}", threadName);
 
             try {
                 TimeUnit.SECONDS.sleep(5);
@@ -39,7 +39,7 @@ public class SleepThreadTest {
                 e.printStackTrace();
             }
 
-            LOGGER.info("Start a thread running");
+            LOGGER.info("Start a threadClass running");
         };
 
         // Measuring

@@ -1,11 +1,9 @@
-package com.csahula.concurrency.thread;
+package com.csahula.concurrency.threadClass;
 
-import com.csahula.collection.ArrayListTest;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,30 +11,26 @@ import static org.junit.Assert.assertThat;
 /**
  * @autor Cyva (cyril.sahula@gmail.com)
  *
- * Basic test uses a {@link Thread} class.
+ * Basic test uses a {@link Thread} class to asleep a thread.
  * Codes do not have a purpose. It is just for my study.
  */
 public class SleepThreadTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SleepThreadTest.class);
 
-    /**
-     * Shows how to asleep a thread.
-     */
     @Test
-    public void executeThreadByClassTest() throws Exception {
+    public void sleepThreadTest() throws Exception {
 
         MyThread myThread = new MyThread();
         myThread.start();
 
 
         // Testing results
-        myThread.join(); // Must wait for a thread die to get a result
+        myThread.join(); // Must wait for a threadClass die to get a result
         assertThat(myThread.getRunningTime(), greaterThanOrEqualTo(10L));
     }
 
-    class MyThread extends Thread
-    {
+    private class MyThread extends Thread {
 
         long time = 0;
 

@@ -12,13 +12,13 @@ import static org.junit.Assert.assertThat;
 /**
  * @autor Cyva (cyril.sahula@gmail.com)
  *
- * Basic test which runs a thread
+ * Basic test which runs a threadClass
  * Codes do not have purpose. It is just for my study.
  */
 public class BasicThreadTest {
 
     /**
-     * Shows how to run a thread by its class.
+     * Shows how to run a threadClass by its class.
      */
     @Test
     public void executeThreadByClassTest() throws Exception {
@@ -40,7 +40,7 @@ public class BasicThreadTest {
     }
 
     /**
-     * Shows how to run a thread by Concurrency API.
+     * Shows how to run a threadClass by Concurrency API.
      */
     @Test
     public void executeThreadByConcurrencyAPI() {

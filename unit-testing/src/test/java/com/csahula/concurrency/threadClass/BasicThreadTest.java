@@ -1,7 +1,6 @@
-package com.csahula.concurrency.thread;
+package com.csahula.concurrency.threadClass;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.Is.is;
@@ -10,28 +9,24 @@ import static org.junit.Assert.assertThat;
 /**
  * @autor Cyva (cyril.sahula@gmail.com)
  *
- * Basic test uses a {@link Thread} class
+ * Basic test uses a {@link Thread} class to start a thread.
  * Codes do not have purpose. It is just for my study.
  */
 public class BasicThreadTest {
 
-    /**
-     * Shows how to run a thread by its class.
-     */
     @Test
-    public void executeThreadByClassTest() throws Exception {
+    public void startThreadTest() throws Exception {
 
         MyThread myThread = new MyThread();
         myThread.start();
 
 
         // Testing results
-        myThread.join(); // Must be to wait for thread die
+        myThread.join(); // Must be to wait for threadClass die
         assertThat(myThread.isState(), is(true));
     }
 
-    class MyThread extends Thread
-    {
+    class MyThread extends Thread {
 
         boolean state = false;
 
