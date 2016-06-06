@@ -2,8 +2,10 @@ package com.csahula.concurrency;
 
 import org.junit.Test;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.junit.Assert.assertThat;
 
@@ -15,8 +17,11 @@ import static org.junit.Assert.assertThat;
  */
 public class BasicThreadTest {
 
+    /**
+     * Shows how to run a thread by its class.
+     */
     @Test
-    public void startThread() throws Exception {
+    public void executeThreadByClassTest() throws Exception {
 
         DataWrapper dataWrapper = new DataWrapper();
 
@@ -32,6 +37,41 @@ public class BasicThreadTest {
 
         // Testing results
         assertThat(dataWrapper.getThreadName(), not(isEmptyOrNullString()));
+    }
+
+    /**
+     * Shows how to run a thread by Concurrency API.
+     */
+    @Test
+    public void executeThreadByConcurrencyAPI() {
+
+        DataWrapper dataWrapper = new DataWrapper();
+
+        TestJob testJob = new TestJob();
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.submit(testJob);
+
+        // Testing results
+        assertThat(dataWrapper.getThreadName(), not(isEmptyOrNullString()));
+    }
+
+    private class TestJob implements Runnable {
+
+        DataWrapper dataWrapper;
+
+        @Override
+        public void run() {
+            dataWrapper.setThreadName(Thread.currentThread().getName());
+        }
+
+        public DataWrapper getDataWrapper() {
+            return dataWrapper;
+        }
+
+        public void setDataWrapper(DataWrapper dataWrapper) {
+            this.dataWrapper = dataWrapper;
+        }
     }
 
     /**

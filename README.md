@@ -2,7 +2,7 @@ Java Prototyping
 ================
 
 Testing abilities of Java languages. The purpose of project is just my study, testing and fun. Project contains two
-modules. One for a unit testing and second one for benchmark testing.
+modules. One for a unit testing and second one for a micro benchmark testing.
 
 Installation
 ============
