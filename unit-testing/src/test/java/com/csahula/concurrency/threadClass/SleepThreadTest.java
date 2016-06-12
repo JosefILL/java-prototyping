@@ -5,12 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Basic test uses a {@link Thread} class to asleep a thread.
  * Codes do not have a purpose. It is just for my study.
  */

@@ -74,9 +74,8 @@ public class Car {
 
         Car car = (Car) o;
 
-        if (!id.equals(car.id)) return false;
+        return id.equals(car.id);
 
-        return true;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.csahula.concurrency;
+package com.csahula.concurrency.concurrentapi;
 
 import com.csahula.collection.ArrayListTest;
 import org.junit.Test;
@@ -7,15 +7,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Test of stopping a threadClass for a particular time period.
  * Codes do not have purpose. It is just for my study.
  */

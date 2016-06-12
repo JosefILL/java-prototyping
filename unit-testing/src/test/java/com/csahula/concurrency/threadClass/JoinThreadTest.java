@@ -8,8 +8,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Basic test uses a {@link Thread} class to join threads together.
  * Codes do not have a purpose. It is just for my study.
  */

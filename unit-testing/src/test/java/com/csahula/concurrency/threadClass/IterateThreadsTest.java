@@ -7,15 +7,11 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Basic test uses a {@link Thread} class to get list of running threads in a group.
  * Codes do not have a purpose. It is just for my study.
  */
@@ -26,7 +22,7 @@ public class IterateThreadsTest {
     @Test
     public void iterateThreadTest() throws Exception {
 
-        final String THREAD_NAME = "MyThread";
+        final String THREAD_NAME = "RunImplementations";
 
         // Start another threadClass
         MyThread myThread = new MyThread(THREAD_NAME);

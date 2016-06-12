@@ -1,5 +1,6 @@
-package com.csahula.concurrency;
+package com.csahula.concurrency.concurrentapi;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -10,8 +11,6 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Basic test which runs a threadClass
  * Codes do not have purpose. It is just for my study.
  */
@@ -19,8 +18,11 @@ public class BasicThreadTest {
 
     /**
      * Shows how to run a threadClass by its class.
+     *
+     * TODO finish
      */
     @Test
+    @Ignore
     public void executeThreadByClassTest() throws Exception {
 
         DataWrapper dataWrapper = new DataWrapper();
@@ -43,6 +45,7 @@ public class BasicThreadTest {
      * Shows how to run a threadClass by Concurrency API.
      */
     @Test
+    @Ignore
     public void executeThreadByConcurrencyAPI() {
 
         DataWrapper dataWrapper = new DataWrapper();

@@ -8,8 +8,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
  * Basic test uses a {@link Thread} class to mark a thread as daemon one.
  * Codes do not have purpose. It is just for my study.
  */

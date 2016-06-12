@@ -27,7 +27,6 @@ public class IterationsCommandsTest {
      * - First loop in do while iteration always invokes.
      * - Scope of variables defined in either cycle bloc or in for command is just for iteration.
      */
-
     @Test
     public void classicsWhileTest() {
         int index = 1;

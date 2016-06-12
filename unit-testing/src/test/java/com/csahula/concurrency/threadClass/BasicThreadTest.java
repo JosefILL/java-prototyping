@@ -2,7 +2,6 @@ package com.csahula.concurrency.threadClass;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
