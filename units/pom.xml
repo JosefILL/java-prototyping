@@ -8,11 +8,13 @@
         <version>1.0</version>
     </parent>
 
+    <!--//////////////////// ABOUT ////////////////////-->
+
     <artifactId>units</artifactId>
     <packaging>jar</packaging>
-
-    <name>unit-testing</name>
     <description>Module for a unit testing of Java features.</description>
+
+    <!--//////////////////// DEPENDENCIES ////////////////////-->
 
     <dependencies>
         <dependency>

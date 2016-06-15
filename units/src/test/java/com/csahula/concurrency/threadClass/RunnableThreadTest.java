@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -23,7 +22,6 @@ public class RunnableThreadTest {
 
         long begin = System.currentTimeMillis();
         myThread.start();
-        long end = System.currentTimeMillis();
 
         // Testing results
         try {
@@ -31,6 +29,8 @@ public class RunnableThreadTest {
         } catch (InterruptedException e) {
             LOGGER.error("Join a thread failed.");
         }
+        long end = System.currentTimeMillis();
+
         assertThat(((end - begin) / 1000), greaterThanOrEqualTo(5L));
     }
 

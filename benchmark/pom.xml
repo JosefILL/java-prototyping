@@ -8,12 +8,14 @@
         <version>1.0</version>
     </parent>
 
+    <!--//////////////////// ABOUT ////////////////////-->
+
     <artifactId>benchmark</artifactId>
     <packaging>jar</packaging>
-
     <name>Micro benchmark</name>
+    <description>Provides framework for a micro unit benchmarking.</description>
 
-
+    <!--//////////////////// DEPENDENCIES ////////////////////-->
 
     <dependencies>
         <dependency>
@@ -25,6 +27,8 @@
             <artifactId>jmh-generator-annprocess</artifactId>
         </dependency>
     </dependencies>
+
+    <!--//////////////////// BUILD ////////////////////-->
 
     <build>
         <plugins>
