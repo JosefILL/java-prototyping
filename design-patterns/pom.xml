@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java-prototyping</artifactId>
+        <groupId>com.csahula</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <!--//////////////////// ABOUT ////////////////////-->
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>design-patterns</artifactId>
+    <description>Module for learning design patterns.</description>
+
+    <!--//////////////////// DEPENDENCIES ////////////////////-->
+
+    <dependencies>
+        <dependency>
+            <groupId>com.csahula</groupId>
+            <artifactId>testing</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

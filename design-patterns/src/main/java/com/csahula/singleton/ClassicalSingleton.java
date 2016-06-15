@@ -8,7 +8,6 @@ package com.csahula.singleton;
  * It ensures lazy initialization, thread safe access.
  * The patter can be destroyed by reflection.
  *
- * @author cyril.sahula@gmail.com (Cyril Sahula)
  * Code is inspired by:
  * http://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-with-examples
  */

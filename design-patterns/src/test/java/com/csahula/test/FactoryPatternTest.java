@@ -12,8 +12,6 @@ import static org.hamcrest.core.Is.is;
 
 /**
  * Testing factory design pattern.
- *
- * @author cyril.sahula@gmail.com (Cyril Sahula)
  */
 public class FactoryPatternTest {
 

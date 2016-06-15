@@ -8,8 +8,6 @@ import org.junit.Test;
 
 /**
  * Tests for the singleton design pattern.
- *
- * @autor cyril.sahula@gmail.com (Cyril Sahula)
  */
 public class ClassicalSingletonTest {
 

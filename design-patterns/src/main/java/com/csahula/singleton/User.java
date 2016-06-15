@@ -1,8 +1,6 @@
 package com.csahula.singleton;
 
 /**
- * @author cyril.sahula@gmail.com (Cyril Sahula)
- *
  * User data wrapper.
  */
 public class User {

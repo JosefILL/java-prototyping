@@ -8,10 +8,13 @@
         <version>1.0</version>
     </parent>
 
+    <!--//////////////////// ABOUT ////////////////////-->
+
     <modelVersion>4.0.0</modelVersion>
     <description>Aggregator for dependencies for a testing.</description>
-
     <artifactId>testing</artifactId>
+
+    <!--//////////////////// DEPENDENCIES ////////////////////-->
 
     <dependencies>
         <dependency>

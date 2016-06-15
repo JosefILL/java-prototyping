@@ -2,8 +2,6 @@ package com.csahula.factory;
 
 /**
  * Factory manages object initialization and initializes right object.
- *
- * @author cyril.sahula@gmail.com (Cyril Sahula)
  */
 public class AnimalFactory {
 
