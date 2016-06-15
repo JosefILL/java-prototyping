@@ -40,13 +40,5 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>org.openjdk.jmh</groupId>
-      <artifactId>jmh-generator-annprocess</artifactId>
-      <version>1.12</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 </project>
 

@@ -8,7 +8,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>unit-testing</artifactId>
+    <artifactId>units</artifactId>
     <packaging>jar</packaging>
 
     <name>unit-testing</name>
@@ -16,16 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>com.csahula</groupId>
+            <artifactId>testing</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

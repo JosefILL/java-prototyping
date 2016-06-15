@@ -24,7 +24,7 @@ public class ArrayListInitialCapacity {
 
     @Benchmark
     public void withPresetCapacity() {
-        ArrayList<String> withDefaultCapacity = new ArrayList(LOOPS);
+        ArrayList<String> withDefaultCapacity = new ArrayList<>(LOOPS);
         for (int i = 0; i < LOOPS; i++) {
             withDefaultCapacity.add(String.valueOf(i));
         }
