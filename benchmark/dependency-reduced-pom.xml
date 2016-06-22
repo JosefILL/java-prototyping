@@ -8,6 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>benchmark</artifactId>
   <name>Micro benchmark</name>
+  <description>Provides framework for a micro unit benchmarking.</description>
   <build>
     <plugins>
       <plugin>

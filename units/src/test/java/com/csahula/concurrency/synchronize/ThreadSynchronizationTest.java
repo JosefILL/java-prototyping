@@ -4,17 +4,16 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.hamcrest.Matchers.lessThan;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
  * Test shows what happens when a concurrency is not managed well.
  * Codes do not have purpose. It is just for my study.
  */
-public class ThreadWithoutSynchronizationTest {
+public class ThreadSynchronizationTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadWithoutSynchronizationTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadSynchronizationTest.class);
 
     private final static Long ACCOUNT_BALANCE = 129999700000L;
 
@@ -38,7 +37,7 @@ public class ThreadWithoutSynchronizationTest {
             LOGGER.error("Join thread failed.");
         }
 
-        assertThat(account.getAmount(), lessThan(ACCOUNT_BALANCE));
+        assertThat(account.getAmount(), is(ACCOUNT_BALANCE));
     }
 
     //////////////////////////////////////////////////////////////////
@@ -69,9 +68,11 @@ public class ThreadWithoutSynchronizationTest {
 
         public void run () {
 
-            long loops = 500000L;
-            for (long i = 0; i < loops; i++) {
-                account.putOnAccount(i);
+            synchronized (account) {
+                long loops = 500000L;
+                for (long i = 0; i < loops; i++) {
+                    account.putOnAccount(i);
+                }
             }
         }
     }
@@ -86,10 +87,11 @@ public class ThreadWithoutSynchronizationTest {
         }
 
         public void run () {
-
-            long loops = 100000L;
-            for (long i = 0; i < loops; i++) {
-                account.putOnAccount(i);
+            synchronized (account) {
+                long loops = 100000L;
+                for (long i = 0; i < loops; i++) {
+                    account.putOnAccount(i);
+                }
             }
         }
     }
