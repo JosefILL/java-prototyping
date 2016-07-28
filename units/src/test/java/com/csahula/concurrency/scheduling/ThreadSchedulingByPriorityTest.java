@@ -1,8 +1,10 @@
-package com.csahula.concurrency.synchronize;
+package com.csahula.concurrency.scheduling;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -11,14 +13,15 @@ import static org.junit.Assert.assertThat;
  * Test shows what happens when a concurrency is not managed well.
  * Codes do not have purpose. It is just for my study.
  */
-public class ThreadSynchronizationTest {
+/*
+public class ThreadSchedulingByPriorityTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadSynchronizationTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadSchedulingByPriorityTest.class);
 
     private final static Long ACCOUNT_BALANCE = 129999700000L;
 
     @Test
-    public void unsynchronzedTest() {
+    public void unsynchronzedTest() throws InterruptedException {
 
         Account account = new Account();
 
@@ -29,13 +32,10 @@ public class ThreadSynchronizationTest {
         regularOrder.start();
 
         // Testing results
-        try {
-            // Must be to wait for threadClass die
-            regularPayment.join();
-            regularOrder.join();
-        } catch (InterruptedException e) {
-            LOGGER.error("Join thread failed.");
-        }
+
+        // Must be to wait for threadClass die
+        regularPayment.join();
+        regularOrder.join();
 
         assertThat(account.getAmount(), is(ACCOUNT_BALANCE));
     }
@@ -46,14 +46,14 @@ public class ThreadSynchronizationTest {
 
     class Account  {
 
-        private Long amount = 0L;
+        private List<String> threads;
 
-        public Long getAmount() {
-            return amount;
+        public List<String> getThreads() {
+            return threads;
         }
 
-        public void putOnAccount(Long amount) {
-            this.amount += amount;
+        synchronized public void putOnAccount(String threadName) {
+            threads.add(threadName);
         }
     }
 
@@ -67,12 +67,9 @@ public class ThreadSynchronizationTest {
         }
 
         public void run () {
-
-            synchronized (account) {
-                long loops = 500000L;
-                for (long i = 0; i < loops; i++) {
-                    account.putOnAccount(i);
-                }
+            long loops = 500000L;
+            for (long i = 0; i < loops; i++) {
+                account.putOnAccount(i);
             }
         }
     }
@@ -87,12 +84,11 @@ public class ThreadSynchronizationTest {
         }
 
         public void run () {
-            synchronized (account) {
-                long loops = 100000L;
-                for (long i = 0; i < loops; i++) {
-                    account.putOnAccount(i);
-                }
+            long loops = 100000L;
+            for (long i = 0; i < loops; i++) {
+                account.putOnAccount(i);
             }
         }
     }
 }
+*/

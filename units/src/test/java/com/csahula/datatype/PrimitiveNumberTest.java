@@ -1,18 +1,15 @@
 package com.csahula.datatype;
 
-import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 /**
- * @autor Cyva (cyril.sahula@gmail.com)
- *
- * Test cases testing possibilities and using primitive numbers data types.
- * It is my preparation for Java certification and codes do not have purpose
+ * Test shows what happens when a concurrency is not managed well.
+ * Codes do not have purpose. It is just for my study.
  */
-public class DatatypePrimitiveNumberTest {
+public class PrimitiveNumberTest {
 
     @Test
     public void sumByteTest() {
@@ -69,7 +66,7 @@ public class DatatypePrimitiveNumberTest {
     }
 
     @Test
-    public void testLongDefinition() {
+    public void longDefinitionTest() {
         long a = 2000L;
         long b = 2000l;
 

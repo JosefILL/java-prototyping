@@ -1,0 +1,71 @@
+== Java Prototyping
+
+The purpose of the project is just my study, testing and fun. Project contains more playgrounds described below.
+
+=== Installation
+
+No installation needed.
+
+==== Software requirements
+
+* Java 1.8 and above
+* Maven 3 and above
+* Maven repository with demanded dependencies
+
+==== Usage
+
+In the project are 4 Maven modules.
+
+==== Benchmark
+
+Micro benchmark tool to test code performance of units.
+
+.How to run
+```
+cd benchmark
+mvn clean install
+java -jar target/benchmark-1.0.jar
+```
+
+Wait and see statistics
+
+==== Design patterns
+
+Implementation of design patterns.
+
+==== testing
+
+The module is BOM to aggregate testing dependencies. To bring jUnit and other dependencies into a Maven module you must put depedency below into its configuration.
+
+.Add to dependencies
+```
+<dependency>
+    <groupId>com.csahula</groupId>
+    <artifactId>testing</artifactId>
+    <scope>test</scope>
+</dependency>
+```
+
+==== units
+
+Unit testing of Java behaviors. To run tests either use your IDE or run it through Maven.
+
+.Maven command to run.
+```
+mvn test
+```
+
+=== Technologies
+
+* Java
+https://www.oracle.com/java/index.html
+
+* Java Micro Harness
+http://openjdk.java.net/projects/code-tools/jmh/
+http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/
+
+* jUnit
+http://junit.org/
+
+* Maven
+https://maven.apache.org/
