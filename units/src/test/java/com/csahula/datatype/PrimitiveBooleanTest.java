@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
- * Test shows what happens when a concurrency is not managed well.
  * Codes do not have purpose. It is just for my study.
  */
 public class PrimitiveBooleanTest {

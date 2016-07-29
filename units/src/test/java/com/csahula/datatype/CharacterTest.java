@@ -5,10 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test shows what happens when a concurrency is not managed well.
  * Codes do not have purpose. It is just for my study.
  */
-public class CharWrapperTest {
+public class CharacterTest {
 
     @Test
     public void isJavaIdentifierPartTest() {

@@ -33,7 +33,7 @@ Wait and see statistics
 
 Implementation of design patterns.
 
-==== testing
+==== Testing
 
 The module is BOM to aggregate testing dependencies. To bring jUnit and other dependencies into a Maven module you must put depedency below into its configuration.
 
@@ -46,7 +46,7 @@ The module is BOM to aggregate testing dependencies. To bring jUnit and other de
 </dependency>
 ```
 
-==== units
+==== Units
 
 Unit testing of Java behaviors. To run tests either use your IDE or run it through Maven.
 

@@ -18,11 +18,12 @@ public class PrimitiveLongTest {
         long b = 2000l;
 
         assertThat("Primitive Long is defined with l suffix.", a, is(new Long(2000)));
-        assertThat("No difference between capital L and lowercase L.", (a == b), is(Boolean.TRUE));
+        assertThat("Does not matter if L is either capital or lowercase.", (a == b), is(Boolean.TRUE));
     }
 
     @Test
-    public void testLongRange() {
+    public void longRangeTest() {
+
         long minNumber = (long) Math.pow(2, 63) + 1;
         long maxNumber = (long) Math.pow(2, 63);
 
