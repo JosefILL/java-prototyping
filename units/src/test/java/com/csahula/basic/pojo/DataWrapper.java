@@ -23,6 +23,7 @@ public class DataWrapper {
     private Character objectCharacterProperty;
 
     int a, b, c = 10;
+    char yes = 'Y', no = 'N';
 
     public boolean isBooleanProperty() {
         return booleanProperty;
@@ -98,5 +99,13 @@ public class DataWrapper {
 
     public int getC() {
         return c;
+    }
+
+    public char getYes() {
+        return yes;
+    }
+
+    public char getNo() {
+        return no;
     }
 }

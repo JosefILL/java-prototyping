@@ -49,5 +49,8 @@ public class ClassMembersInitializationTest {
         assertThat("Default value assigned.", dataWrapper.getA(), is(0));
         assertThat("Default value assigned.", dataWrapper.getB(), is(0));
         assertThat("Just last in line has assigned value.", dataWrapper.getC(), is(10));
+        assertThat(dataWrapper.getYes(), is('Y'));
+        assertThat(dataWrapper.getNo(), is('N'));
+
     }
 }
