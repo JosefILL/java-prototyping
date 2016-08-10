@@ -20,7 +20,7 @@ public class ClassMembersInitializationTest {
 
         DataWrapper dataWrapper = new DataWrapper();
 
-        assertThat(dataWrapper.isBooleanProperty(), is(false));
+        assertThat(dataWrapper.isBooleanProperty(), is(true));
         assertThat(dataWrapper.getByteProperty(), is((byte)0));
         assertThat(dataWrapper.getShortProperty(), is((short)0));
         assertThat(dataWrapper.getIntProperty(), is(0));
